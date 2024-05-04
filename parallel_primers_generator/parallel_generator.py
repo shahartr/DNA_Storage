@@ -10,7 +10,6 @@ MAX_SELF_COMP = 4
 MAX_INTER_COMP = 10
 MIN_HAM = 6
 
-
 complement_map = {'G': 'C',
                   'C': 'G',
                   'T': 'A',
