@@ -1,9 +1,8 @@
-import itertools
-import random
 import sys
-primer_library = []
-primer_to_hamming_distance_primer = {}
+
 all_primers = []
+primer_library = []
+patterns_of_6_len_library = {}
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -16,8 +15,6 @@ complement_map = {
     'T': 'A',
     'A': 'T'
 }
-
-characters = ['A', 'C', 'G', 'T']
 
 # return the complement of a strand of DNA
 def complement_strand(strand):
@@ -63,43 +60,69 @@ def hamming_distance(strand1, strand2):
             dist += 1
     return dist
 
-def get_all_primers():
-    all_primers = [''.join(p) for p in itertools.product(characters, repeat=PRIMER_BPS)]
-    return all_primers
+# sequentially count through possible strands of DNA, using the lexigraphic order of the nucleotides
+def next_primer(strand):
+    suffix = ""
+    for i in range((len(strand) - 1), -1, -1):
+        if strand[i] == 'A':
+            suffix = 'C' + suffix
+            break
+        elif strand[i] == 'C':
+            suffix = 'G' + suffix
+            break
+        elif strand[i] == 'G':
+            suffix = 'T' + suffix
+            break
+        else:
+            suffix = 'A' + suffix
+    return strand[0:len(strand) - len(suffix)] + suffix
 
+def get_first_primer():
+    first_primer = ""
+    for i in range(PRIMER_BPS):
+            first_primer += 'A'
+
+    return first_primer
+
+def get_all_patterns_of_6():
+    first_pattern = ""
+    for i in range(MIN_HAM):
+            first_pattern += 'A'
+
+    patterns_of_6_len_library[first_pattern] = False
+    prev_pattern = first_pattern
+
+    for i in range(4 ** MIN_HAM):
+        suffix = ""
+        for i in range((len(prev_pattern) - 1), -1, -1):
+            if prev_pattern[i] == 'A':
+                suffix = 'C' + suffix
+                break
+            elif prev_pattern[i] == 'C':
+                suffix = 'G' + suffix
+                break
+            elif prev_pattern[i] == 'G':
+                suffix = 'T' + suffix
+                break
+            else:
+                suffix = 'A' + suffix
+        prev_pattern = prev_pattern[0:len(prev_pattern) - len(suffix)] + suffix
+        patterns_of_6_len_library[prev_pattern] =  True
 
 def run():
+    with open('output_14_len_primer_internal_advance_generator.txt', 'r') as f:
+        all_primers = f.readlines()
 
-    all_primers = get_all_primers()
+    # Remove newline characters from each item
+    all_primers = [item.strip() for item in all_primers]
 
-    i = 0
-    while(len(all_primers) > 0):
-        if (i % 500000) == 0:
-            sys.stdout.write(".")
+    get_all_patterns_of_6()
 
-        i+=1
-
-        primer = random(all_primers)
-        all_primers.remove(primer)
-
-        # GC Content between 45 and 55%
-        percent = cg_percent(primer)
-        if (percent < 0.45) or (percent > 0.55):
-            continue
-
-        # no homopolymers greater than length 2
-        if max_homopolymer(primer) > MAX_HP:
-            continue
-
-        # no self complementing greater than 4
-        if contains_complement(primer, primer, MAX_SELF_COMP + 1):
-            continue
-
+    for primer in all_primers:
         valid = True
         for p in primer_library:
             # hamming distance of at least 6 from other primers
             if hamming_distance(p, primer) < MIN_HAM:
-                primer_to_hamming_distance_primer[p].append(primer)
                 valid = False
                 break
 
@@ -110,10 +133,10 @@ def run():
 
         if valid:
             primer_library.append(primer)
-            primer_to_hamming_distance_primer[primer] = []
+
 
     print("")
-    print(primer_library)
+    #print(primer_library)
     print(len(primer_library))
 
 

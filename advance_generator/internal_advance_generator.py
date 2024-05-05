@@ -1,9 +1,6 @@
-import itertools
-import random
 import sys
+import datetime
 primer_library = []
-primer_to_hamming_distance_primer = {}
-all_primers = []
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -16,8 +13,6 @@ complement_map = {
     'T': 'A',
     'A': 'T'
 }
-
-characters = ['A', 'C', 'G', 'T']
 
 # return the complement of a strand of DNA
 def complement_strand(strand):
@@ -55,32 +50,40 @@ def contains_complement(strand1, strand2, length):
             return True
     return False
 
-# return hamming distance between two strings, assuming the two strands are same length
-def hamming_distance(strand1, strand2):
-    dist = 0
-    for i in range(0, len(strand1) - 1):
-        if strand1[i] != strand2[i]:
-            dist += 1
-    return dist
+# sequentially count through possible strands of DNA, using the lexigraphic order of the nucleotides
+def next_primer(strand):
+    suffix = ""
+    for i in range((len(strand) - 1), -1, -1):
+        if strand[i] == 'A':
+            suffix = 'C' + suffix
+            break
+        elif strand[i] == 'C':
+            suffix = 'G' + suffix
+            break
+        elif strand[i] == 'G':
+            suffix = 'T' + suffix
+            break
+        else:
+            suffix = 'A' + suffix
+    return strand[0:len(strand) - len(suffix)] + suffix
 
-def get_all_primers():
-    all_primers = [''.join(p) for p in itertools.product(characters, repeat=PRIMER_BPS)]
-    return all_primers
+def get_first_primer():
+    first_primer = ""
+    for i in range(PRIMER_BPS):
+            first_primer += 'A'
+
+    return first_primer
 
 
 def run():
+    print("Start running time:" , datetime.datetime.now())
+    primer = get_first_primer()
 
-    all_primers = get_all_primers()
-
-    i = 0
-    while(len(all_primers) > 0):
+    for i in range(4 ** PRIMER_BPS):
         if (i % 500000) == 0:
-            sys.stdout.write(".")
+            print("Time: " , datetime.datetime.now() , " after: " , i , " strings")
 
-        i+=1
-
-        primer = random(all_primers)
-        all_primers.remove(primer)
+        primer = next_primer(primer)
 
         # GC Content between 45 and 55%
         percent = cg_percent(primer)
@@ -95,27 +98,18 @@ def run():
         if contains_complement(primer, primer, MAX_SELF_COMP + 1):
             continue
 
-        valid = True
-        for p in primer_library:
-            # hamming distance of at least 6 from other primers
-            if hamming_distance(p, primer) < MIN_HAM:
-                primer_to_hamming_distance_primer[p].append(primer)
-                valid = False
-                break
-
-            # no interstrand complements of more than 10
-            if contains_complement(p, primer, MAX_INTER_COMP + 1):
-                valid = False
-                break
-
-        if valid:
-            primer_library.append(primer)
-            primer_to_hamming_distance_primer[primer] = []
+        primer_library.append(primer)
 
     print("")
-    print(primer_library)
+    #print(primer_library)
     print(len(primer_library))
+
+    with open('output_14_len_primer_internal_advance_generator.txt', 'w') as f:
+        for item in primer_library:
+            f.write("%s\n" % item)
 
 
 if __name__ == "__main__":
     run()
+
+#after the internal checking we have 32804376 primers.
