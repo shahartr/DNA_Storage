@@ -54,8 +54,10 @@ def is_valid(primer):
            not contains_complement(primer, primer, MAX_SELF_COMP + 1)
 
 
-def poll_primers(valid_primers):#todo  consider adding parallelism here !!1
+def poll_primers(valid_primers): #todo consider adding parallelism here !!1
     primer_list = list(valid_primers)
+    #maybe try different shuffle from this point on
+
     random.shuffle(primer_list)
     for primer in primer_list:
         if all(hamming_distance(primer, p) >= MIN_HAM for p in primer_library) and \
@@ -67,22 +69,26 @@ def poll_primers(valid_primers):#todo  consider adding parallelism here !!1
 #     all_primers = [''.join(p) for p in itertools.product(nucleotides, repeat=PRIMER_BPS)]
 #     valid_primers = set(primer for primer in all_primers if is_valid(primer))
 #     return valid_primers
-def worker(num_primers):#with progress tracking
+
+
+def worker(num_primers) :#with progress tracking
     nucleotides = ['A', 'C', 'G', 'T']
-    all_primers = [''.join(p) for p in itertools.product(nucleotides, repeat=PRIMER_BPS)]
+    all_primers = [''.join(p) for p in itertools.product(nucleotides, repeat=PRIMER_BPS)] #itertolls.product returns a cartesian product of the nucleotides list with itself PRIMER_BPS times
+
+    #baiscally gen all possible primers
     valid_primers = set()
     quarter = len(all_primers) // 4
     for i, primer in enumerate(all_primers):
         if is_valid(primer):
             valid_primers.add(primer)
-        if (i + 1) % quarter == 0:
+        if (i ) % quarter == 0:
             print(f"Worker {multiprocessing.current_process().name} has processed {(i + 1) / len(all_primers) * 100}% of its primers")
     return valid_primers
 
 def generate_all_possible_primers_parallel(num_processes):
-    pool = multiprocessing.Pool(processes=num_processes)
+    pool = multiprocessing.Pool(processes=1)
     num_primers_per_process = 4**PRIMER_BPS // num_processes
-    results = pool.map(worker, [num_primers_per_process] * num_processes)
+    results = pool.map(worker, [num_primers_per_process] * num_processes)# pool.map(worker, [num_primers_per_process] * num_processes) is equivalent to [worker(num_primers_per_process) for _ in range(num_processes)]
     pool.close()
     pool.join()
     return set().union(*results)
