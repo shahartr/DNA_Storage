@@ -2,10 +2,10 @@ import sys
 import datetime
 primer_library = []
 MAX_HP = 2
-PRIMER_BPS = 14
+PRIMER_BPS = 11
 MAX_SELF_COMP = 4
-MAX_INTER_COMP = 10
-MIN_HAM = 6
+# MAX_INTER_COMP = 10
+# MIN_HAM = 6
 
 complement_map = {
     'G': 'C',
@@ -104,12 +104,14 @@ def run():
     #print(primer_library)
     print(len(primer_library))
 
-    with open('output_14_len_primer_internal_advance_generator.txt', 'w') as f:
+    with open('output_11_len_primer_internal_advance_generator.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
 
 if __name__ == "__main__":
     run()
-
-#after the internal checking we have 32804376 primers.
+#after the internal checking we have 0 primers of 9 len with the default values of other parameters.s
+#after the internal checking we have 189600 primers of 10 len with the default values of other parameters.
+#after the internal checking we have 1294544 primers of 11 len with the default values of other parameters.
+#after the internal checking we have 32804376 primers of 14 len with the default values of other parameters.
