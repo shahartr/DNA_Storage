@@ -1,8 +1,11 @@
 import sys
 import datetime
+import matplotlib.pyplot as plt
 primer_library = []
+count_primers_list = []
+time_list = []
 MAX_HP = 2
-PRIMER_BPS = 11
+PRIMER_BPS = 12
 MAX_SELF_COMP = 4
 # MAX_INTER_COMP = 10
 # MIN_HAM = 6
@@ -79,9 +82,14 @@ def run():
     print("Start running time:" , datetime.datetime.now())
     primer = get_first_primer()
 
+    start = datetime.datetime.now()
+
     for i in range(4 ** PRIMER_BPS):
         if (i % 500000) == 0:
-            print("Time: " , datetime.datetime.now() , " after: " , i , " strings")
+            currentTime = datetime.datetime.now()
+            count_primers_list.append(i)
+            time_list.append(currentTime)
+            print("Time: " , currentTime , " after: " , i , " strings")
 
         primer = next_primer(primer)
 
@@ -104,7 +112,23 @@ def run():
     #print(primer_library)
     print(len(primer_library))
 
-    with open('output_11_len_primer_internal_advance_generator.txt', 'w') as f:
+    # plt.figure(figsize=(10, 6))
+    plt.plot(count_primers_list, time_list, marker='o', linestyle='-', color='b')
+
+    # Step 3: Format the plot
+    plt.title('Counts Primers Over Time')
+    plt.xlabel('Time')
+    plt.ylabel('Count')
+    plt.grid(True)
+
+    # Rotate date labels for better readability
+    plt.xticks(rotation=45)
+
+    # Show the plot
+    plt.tight_layout()
+    plt.show()
+
+    with open('output_12_len_primer_internal_advance_generator.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
@@ -114,4 +138,6 @@ if __name__ == "__main__":
 #after the internal checking we have 0 primers of 9 len with the default values of other parameters.s
 #after the internal checking we have 189600 primers of 10 len with the default values of other parameters.
 #after the internal checking we have 1294544 primers of 11 len with the default values of other parameters.
+#after the internal checking we have 2483096 primers of 12 len with the default values of other parameters.
+#after the internal checking we have 17171840 primers of 13 len with the default values of other parameters.
 #after the internal checking we have 32804376 primers of 14 len with the default values of other parameters.

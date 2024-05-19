@@ -1,10 +1,10 @@
 import sys
 primer_library = []
 MAX_HP = 2
-PRIMER_BPS = 14
+PRIMER_BPS = 10 # 14
 MAX_SELF_COMP = 4
-MAX_INTER_COMP = 10
-MIN_HAM = 6
+MAX_INTER_COMP = 7 #10
+MIN_HAM = 4 #6
 
 complement_map = {
     'G': 'C',

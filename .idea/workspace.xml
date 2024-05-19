@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="added advance generator - separate initial checking and comparative checking">
+    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/naive_generator/naive_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/naive_generator/naive_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.internal_advance_generator">
+  <component name="RunManager" selected="Python.advance_filtering">
     <configuration name="advance_filtering" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="DNA_Storage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +82,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="naive_generator" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="DNA_Storage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/bin/python" />
+      <option name="SDK_NAME" value="Python 3.9 (DNA_Storage) (2)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/naive_generator" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/naive_generator/naive_generator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,6 +180,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.advance_filtering" />
+      <item itemvalue="Python.naive_generator" />
       <item itemvalue="Python.primers_start_with_all_A_generator" />
       <item itemvalue="Python.primers_random_generator" />
       <item itemvalue="Python.internal_advance_generator" />
@@ -193,24 +217,25 @@
       <option name="project" value="LOCAL" />
       <updated>1714931520048</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="advance_filtering">
+      <created>1716035116627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716035116627</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="primers orders generators" />
     <MESSAGE value="random generator" />
     <MESSAGE value="added advance generator - separate initial checking and comparative checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="added advance generator - separate initial checking and comparative checking" />
+    <MESSAGE value="advance_filtering" />
+    <option name="LAST_COMMIT_MESSAGE" value="advance_filtering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/advance_generator/advance_filtering.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -219,5 +244,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="primer_library" language="Python" />
+        <watch expression="patterns_of_min_ham_len_library_list[i][pattern]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
