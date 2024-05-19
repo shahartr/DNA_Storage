@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering">
+    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive_generator/naive_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/naive_generator/naive_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,10 +178,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.advance_filtering" />
-      <item itemvalue="Python.naive_generator" />
-      <item itemvalue="Python.primers_start_with_all_A_generator" />
-      <item itemvalue="Python.primers_random_generator" />
       <item itemvalue="Python.internal_advance_generator" />
+      <item itemvalue="Python.naive_generator" />
+      <item itemvalue="Python.primers_random_generator" />
+      <item itemvalue="Python.primers_start_with_all_A_generator" />
       <item itemvalue="Python.primers_start_with_all_C_generator" />
     </list>
   </component>
@@ -224,15 +222,34 @@
       <option name="project" value="LOCAL" />
       <updated>1716035116627</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="advance_filtering 2-2">
+      <created>1716114298180</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716114298180</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="primers orders generators" />
     <MESSAGE value="random generator" />
     <MESSAGE value="added advance generator - separate initial checking and comparative checking" />
     <MESSAGE value="advance_filtering" />
-    <option name="LAST_COMMIT_MESSAGE" value="advance_filtering" />
+    <MESSAGE value="advance_filtering 2-2" />
+    <option name="LAST_COMMIT_MESSAGE" value="advance_filtering 2-2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
