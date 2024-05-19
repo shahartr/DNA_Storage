@@ -4,7 +4,7 @@ import datetime
 all_primers = []
 primer_library = []
 patterns_of_min_ham_len_library_list = []
-patterns_complement_of_max_inter_comp_len_library_list = []
+patterns_complement_of_max_inter_comp_len_library_set = {}
 MAX_HP = 2
 PRIMER_BPS = 13
 MAX_SELF_COMP = 4
@@ -157,8 +157,8 @@ def get_all_patterns_of_max_inter_comp():
         patterns_complement_of_7_len_library_set[current_pattern] = False
         prev_pattern = current_pattern
 
-    for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
-        patterns_complement_of_max_inter_comp_len_library_list.append(patterns_complement_of_7_len_library_set.copy())
+
+    patterns_complement_of_max_inter_comp_len_library_set = patterns_complement_of_7_len_library_set.copy()
 
 def check_if_contains_complement_patterns_in_primers_library(primer):
     complement_primer = complement_strand(primer)
@@ -200,7 +200,6 @@ def run():
                 update_patterns_of_min_ham_len_library(primer)
                 update_patterns_complement_of_max_inter_complement_len_library(primer)
                 primer_library.append(primer)
-
         i = i + 1
 
 
