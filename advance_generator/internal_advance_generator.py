@@ -5,7 +5,7 @@ primer_library = []
 count_primers_list = []
 time_list = []
 MAX_HP = 2
-PRIMER_BPS = 12
+PRIMER_BPS = 14
 MAX_SELF_COMP = 4
 # MAX_INTER_COMP = 10
 # MIN_HAM = 6
@@ -128,7 +128,7 @@ def run():
     plt.tight_layout()
     plt.show()
 
-    with open('output_12_len_primer_internal_advance_generator.txt', 'w') as f:
+    with open('output_14_len_primer_internal_advance_generator.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
@@ -141,3 +141,5 @@ if __name__ == "__main__":
 #after the internal checking we have 2483096 primers of 12 len with the default values of other parameters.
 #after the internal checking we have 17171840 primers of 13 len with the default values of other parameters.
 #after the internal checking we have 32804376 primers of 14 len with the default values of other parameters.
+#after the internal checking we have 228915528 primers of 15 len with the default values of other parameters.
+

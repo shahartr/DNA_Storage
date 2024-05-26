@@ -1,14 +1,14 @@
-import sys
+import itertools
 import datetime
 
 all_primers = []
-primer_library = []
-patterns_of_min_ham_len_library_list = []
-patterns_complement_of_max_inter_comp_len_library_set = {}
+primer_set = set()
+patterns_of_min_ham_len_set = set()
+patterns_complement_of_max_inter_comp_len_set = set()
 MAX_HP = 2
-PRIMER_BPS = 13
+PRIMER_BPS = 14
 MAX_SELF_COMP = 4
-MAX_INTER_COMP = 9
+MAX_INTER_COMP = 10
 MIN_HAM = 6
 
 complement_map = {
@@ -32,19 +32,19 @@ def cg_percent(strand):
 # determine the maximum homopolymers in a strand
 def max_homopolymer(strand):
     bp = strand[0]
-    max = 1
-    cur = 1
+    max_count = 1
+    cur_count = 1
     for i in range(1, len(strand)):
         if bp == strand[i]:
-            cur += 1
+            cur_count += 1
         else:
             bp = strand[i]
-            if cur > max:
-                max = cur
-            cur = 1
-    if cur > max:
-        max = cur
-    return max
+            if cur_count > max_count:
+                max_count = cur_count
+            cur_count = 1
+    if cur_count > max_count:
+        max_count = cur_count
+    return max_count
 
 # return true if there is a longer than length-base pair complement between the two strands
 def contains_complement(strand1, strand2, length):
@@ -57,7 +57,7 @@ def contains_complement(strand1, strand2, length):
 # return hamming distance between two strings, assuming the two strands are same length
 def hamming_distance(strand1, strand2):
     dist = 0
-    for i in range(0, len(strand1) - 1):
+    for i in range(0, len(strand1)):
         if strand1[i] != strand2[i]:
             dist += 1
     return dist
@@ -82,139 +82,96 @@ def next_primer(strand):
 def get_first_primer():
     first_primer = ""
     for i in range(PRIMER_BPS):
-            first_primer += 'A'
+        first_primer += 'A'
 
     return first_primer
 
 def get_all_patterns_of_min_ham():
-    #todo: check the option of iteration tolls
-    patterns_of_4_len_library_set = {}
-    first_pattern = ""
-    for i in range(MIN_HAM):
-            first_pattern += 'A'
+    # Use itertools.product to generate all combinations of 'A', 'C', 'G', 'T' of length MIN_HAM
+    bases = ['A', 'C', 'G', 'T']
+    patterns_of_4_len_set = {''.join(pattern): False for pattern in itertools.product(bases, repeat=MIN_HAM)}
 
-    patterns_of_4_len_library_set[first_pattern] = False
-    prev_pattern = first_pattern
-
-    for i in range(4 ** MIN_HAM):
-        suffix = ""
-        for i in range((len(prev_pattern) - 1), -1, -1):
-            if prev_pattern[i] == 'A':
-                suffix = 'C' + suffix
-                break
-            elif prev_pattern[i] == 'C':
-                suffix = 'G' + suffix
-                break
-            elif prev_pattern[i] == 'G':
-                suffix = 'T' + suffix
-                break
-            else:
-                suffix = 'A' + suffix
-        current_pattern = prev_pattern[0:len(prev_pattern) - len(suffix)] + suffix
-        patterns_of_4_len_library_set[current_pattern] = False
-        prev_pattern = current_pattern
-
-    for i  in range(PRIMER_BPS - MIN_HAM + 1):
-        patterns_of_min_ham_len_library_list.append(patterns_of_4_len_library_set.copy())
+    for i in range(PRIMER_BPS - MIN_HAM + 1):
+        patterns_of_min_ham_len_set.update(patterns_of_4_len_set) # not used
 
 def check_hamming_distance(primer):
-    for i in range(PRIMER_BPS - MIN_HAM + 1):
-        pattern = primer[i: i + MIN_HAM]
-        if(patterns_of_min_ham_len_library_list[i][pattern]):
+    for existing_primer in primer_set:
+        if hamming_distance(primer, existing_primer) < MIN_HAM:
             return False
-
     return True
 
-def update_patterns_of_min_ham_len_library(primer):
+def update_patterns_of_min_ham_len_set(primer):
     for i in range(PRIMER_BPS - MIN_HAM + 1):
         pattern = primer[i: i + MIN_HAM]
-        patterns_of_min_ham_len_library_list[i][pattern] = True
+        patterns_of_min_ham_len_set.add(pattern)
 
 def get_all_patterns_of_max_inter_comp():
-    patterns_complement_of_7_len_library_set = {}
-    first_pattern = ""
-    for i in range(MAX_INTER_COMP):
-        first_pattern += 'A'
+    bases = ['A', 'C', 'G', 'T']
+    patterns_of_MIC_set = {''.join(pattern): False for pattern in itertools.product(bases, repeat=MAX_INTER_COMP)}
+    patterns_complement_of_max_inter_comp_len_set.update(patterns_of_MIC_set)
 
-    patterns_complement_of_7_len_library_set[first_pattern] = False
-    prev_pattern = first_pattern
-
-    for i in range(4 ** MAX_INTER_COMP):
-        suffix = ""
-        for i in range((len(prev_pattern) - 1), -1, -1):
-            if prev_pattern[i] == 'A':
-                suffix = 'C' + suffix
-                break
-            elif prev_pattern[i] == 'C':
-                suffix = 'G' + suffix
-                break
-            elif prev_pattern[i] == 'G':
-                suffix = 'T' + suffix
-                break
-            else:
-                suffix = 'A' + suffix
-        current_pattern = prev_pattern[0:len(prev_pattern) - len(suffix)] + suffix
-        patterns_complement_of_7_len_library_set[current_pattern] = False
-        prev_pattern = current_pattern
-
-
-    patterns_complement_of_max_inter_comp_len_library_set = patterns_complement_of_7_len_library_set.copy()
-
-def check_if_contains_complement_patterns_in_primers_library(primer):
+def check_if_contains_complement_patterns_in_primers_set(primer):
     complement_primer = complement_strand(primer)
 
     for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
         complement_pattern = complement_primer[i: i + MAX_INTER_COMP]
-        if(patterns_complement_of_max_inter_comp_len_library_list[i][complement_pattern]):
+        if complement_pattern in patterns_complement_of_max_inter_comp_len_set:
             return False
+        else:
+            patterns_complement_of_max_inter_comp_len_set.add(complement_pattern)
 
     return True
 
-def update_patterns_complement_of_max_inter_complement_len_library(primer):
-        for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
-            pattern = primer[i: i + MAX_INTER_COMP]
-            patterns_of_min_ham_len_library_list[i][pattern] = True
+def update_patterns_complement_of_max_inter_complement_len_set(primer):
+    for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
+        pattern = primer[i: i + MAX_INTER_COMP]
+        patterns_of_min_ham_len_set.add(pattern)
 
 
 def run():
-    with open('output_13_len_primer_internal_advance_generator.txt', 'r') as f:
+    global primer_set
+    with open('output_14_len_primer_internal_advance_generator.txt', 'r') as f:
         all_primers = f.readlines()
 
     # Remove newline characters from each item
     all_primers = [item.strip() for item in all_primers]
-
-    get_all_patterns_of_min_ham()
+   # get_all_patterns_of_max_inter_comp()
+   # get_all_patterns_of_min_ham()  # bad!
 
     i = 0
     for primer in all_primers:
         if (i % 250000) == 0:
-            print("Time: ", datetime.datetime.now(), " after: ", i, " strings from: ", len(all_primers), "\nsum primers: ", len(primer_library))
+            print("Time: ", datetime.datetime.now(), " after: ", i, " strings from: ", len(all_primers), "\nsum primers: ", len(primer_set))
 
         valid = check_hamming_distance(primer)
 
         if(valid):
-            get_all_patterns_of_max_inter_comp()
-            valid = check_if_contains_complement_patterns_in_primers_library(primer)
+
+            valid = check_if_contains_complement_patterns_in_primers_set(primer)
 
             if(valid):
-                update_patterns_of_min_ham_len_library(primer)
-                update_patterns_complement_of_max_inter_complement_len_library(primer)
-                primer_library.append(primer)
+                #update_patterns_of_min_ham_len_set(primer)
+                #update_patterns_complement_of_max_inter_complement_len_set(primer)
+                #just add all of his complimentry to the set
+                primer_set.add(primer)
         i = i + 1
 
-
-    print("")
-    #print(primer_library)
-    print(len(primer_library))
+    print(len(primer_set))
 
 
 if __name__ == "__main__":
     run()
 
+
 # after all: 179 primers for PRIMER_BPS = 10, MAX_INTER_COMP = 7, MIN_HAM = 4.
 # after all: 724 primers for PRIMER_BPS = 11, MAX_INTER_COMP = 8, MIN_HAM = 5.
 # after all: 682 primers for PRIMER_BPS = 12, MAX_INTER_COMP = 9, MIN_HAM = 5.
 
+# after changing some methods to fit i got 546 primers with setting 12,9,6
+#and for 12,9,5 i got 2443 primer
 
-# Time:  2024-05-19 12:32:27.829146  after:  6000000  strings from:  17171840
-# sum primers:  1140
+
+
+#default setting 50 %
+#Time:  2024-05-25 23:27:00.323717  after:  16250000  strings from:  32804376
+#sum primers:  2626
