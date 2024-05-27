@@ -2,7 +2,7 @@
 import itertools
 import random
 import multiprocessing
-
+#maybe go back to list []
 primer_library = set()
 MAX_HP = 2
 PRIMER_BPS = 14

@@ -167,11 +167,17 @@ if __name__ == "__main__":
 # after all: 724 primers for PRIMER_BPS = 11, MAX_INTER_COMP = 8, MIN_HAM = 5.
 # after all: 682 primers for PRIMER_BPS = 12, MAX_INTER_COMP = 9, MIN_HAM = 5.
 
-# after changing some methods to fit i got 546 primers with setting 12,9,6
-#and for 12,9,5 i got 2443 primer
+# after changing some methods to fit i got 546 primers with settings 12,9,6
+#and 2443 primer with settings 12,9,5
 
 
 
 #default setting 50 %
-#Time:  2024-05-25 23:27:00.323717  after:  16250000  strings from:  32804376
+#after:  16250000  primers from:  32804376
 #sum primers:  2626
+
+#73%   after:  25750000  primers from:  32804376
+#sum primers:  3610
+
+
+#100% = 4188 primers!

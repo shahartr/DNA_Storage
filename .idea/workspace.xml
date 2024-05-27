@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
-      <change afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph-testing/output_12_len_primer_internal_advance_generator.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myplot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parallel_primers_generator/parallel_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/parallel_primers_generator/parallel_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +53,12 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.advance_filtering.executor": "Debug",
     "Python.internal_advance_generator.executor": "Run",
+    "Python.max_independet_set.executor": "Debug",
     "Python.plotter.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "primers-order",
-    "last_opened_file_path": "/Users/shahartrabelsi/Documents/GitHub/DNA_Storage",
+    "git-widget-placeholder": "MIS__testing",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/graph-testing",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,7 +68,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/graph-testing" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/graph-testing" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -256,7 +266,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714817371707</updated>
       <workItem from="1716637396210" duration="2286000" />
-      <workItem from="1716639912945" duration="24225000" />
+      <workItem from="1716639912945" duration="46124000" />
     </task>
     <task id="LOCAL-00001" summary="primers orders generators">
       <created>1714828431919</created>
@@ -321,6 +331,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotter.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/graph-testing/max_independet_set.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/graph-testing/max_independet_set.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -337,8 +364,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DNA_Storage$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1716640026607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
-    <SUITE FILE_PATH="coverage/DNA_Storage$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1716640511929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$max_independet_set.coverage" NAME="max_independet_set Coverage Results" MODIFIED="1716722454119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph-testing" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1716722070474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1716711005596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1716649597742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
   </component>
 </project>

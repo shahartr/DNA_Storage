@@ -5,7 +5,7 @@ primer_library = []
 count_primers_list = []
 time_list = []
 MAX_HP = 2
-PRIMER_BPS = 14
+PRIMER_BPS = 10
 MAX_SELF_COMP = 4
 # MAX_INTER_COMP = 10
 # MIN_HAM = 6
@@ -128,7 +128,7 @@ def run():
     plt.tight_layout()
     plt.show()
 
-    with open('output_14_len_primer_internal_advance_generator.txt', 'w') as f:
+    with open('../graph-testing/output_10_len_primer_internal_advance_generator.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
