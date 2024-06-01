@@ -1,6 +1,6 @@
 import sys
 primer_library = []
-primer_to_haming_distance_primer = {}
+primer_to_hamming_distance_primer = {}
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -112,7 +112,7 @@ def run():
         for p in primer_library:
             # hamming distance of at least 6 from other primers
             if hamming_distance(p, primer) < MIN_HAM:
-                primer_to_haming_distance_primer[p].append(primer)
+                primer_to_hamming_distance_primer[p].append(primer)
                 valid = False
                 break
 
@@ -123,7 +123,7 @@ def run():
 
         if valid:
             primer_library.append(primer)
-            primer_to_haming_distance_primer[primer] = []
+            primer_to_hamming_distance_primer[primer] = []
 
     print("")
     print(primer_library)

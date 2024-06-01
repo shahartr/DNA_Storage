@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
-      <change afterPath="$PROJECT_DIR$/graph-testing/output_12_len_primer_internal_advance_generator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myplot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parallel_primers_generator/parallel_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/parallel_primers_generator/parallel_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "MIS__testing",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/graph-testing",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,7 +68,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.advance_filtering">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
@@ -266,7 +258,8 @@
       <option name="presentableId" value="Default" />
       <updated>1714817371707</updated>
       <workItem from="1716637396210" duration="2286000" />
-      <workItem from="1716639912945" duration="46124000" />
+      <workItem from="1716639912945" duration="46726000" />
+      <workItem from="1717252342852" duration="1000000" />
     </task>
     <task id="LOCAL-00001" summary="primers orders generators">
       <created>1714828431919</created>

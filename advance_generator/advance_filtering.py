@@ -129,6 +129,12 @@ def update_patterns_complement_of_max_inter_complement_len_set(primer):
 
 
 def run():
+
+    # todo : 1.split the hamming distance check and the complement check to two different parts
+    # check 50% of the primers of each distance(most of the run time is spent on the hamming distance check after 50%)
+    #is parallelism  needed here??
+    #todo save final primers to file
+
     global primer_set
     with open('output_14_len_primer_internal_advance_generator.txt', 'r') as f:
         all_primers = f.readlines()
