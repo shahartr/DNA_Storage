@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
+      <change afterPath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +46,14 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.advance_filtering.executor": "Debug",
+    "Python.advance_filtering_shuffle.executor": "Debug",
     "Python.internal_advance_generator.executor": "Run",
     "Python.max_independet_set.executor": "Debug",
     "Python.plotter.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "MIS__testing",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/advance_generator",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,6 +64,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/advance_generator" />
       <recent name="$PROJECT_DIR$/graph-testing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -68,7 +72,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.advance_filtering">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
@@ -360,6 +364,7 @@
     <SUITE FILE_PATH="coverage/DNA_Storage$max_independet_set.coverage" NAME="max_independet_set Coverage Results" MODIFIED="1716722454119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph-testing" />
     <SUITE FILE_PATH="coverage/DNA_Storage$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1716722070474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
     <SUITE FILE_PATH="coverage/DNA_Storage$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1716711005596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1716649597742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1717325020610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering_shuffle.coverage" NAME="advance_filtering_shuffle Coverage Results" MODIFIED="1717325048788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
   </component>
 </project>

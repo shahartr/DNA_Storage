@@ -1,5 +1,6 @@
 import itertools
 import datetime
+import random
 
 all_primers = []
 primer_set = set()
@@ -147,20 +148,17 @@ def run():
 
     i = 0
 
+    random.shuffle(all_primers)
+
     for primer in all_primers:
         if (i % 250000) == 0:
             print("Time: ", datetime.datetime.now(), " after: ", i, " strings from: ", len(all_primers), "\nsum primers: ", len(primer_set))
-
         valid = check_hamming_distance(primer)
 
         if(valid):
-
             valid = check_if_contains_complement_patterns_in_primers_set(primer)
 
             if(valid):
-                #update_patterns_of_min_ham_len_set(primer)
-                #update_patterns_complement_of_max_inter_complement_len_set(primer)
-                #just add all of his complimentry to the set
                 primer_set.add(primer)
         i = i + 1
 
