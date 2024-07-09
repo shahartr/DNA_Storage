@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
-      <change afterPath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advance_generator/output_14_len_primer_final_primers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/BlastAndMultiplexPCR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie_Blast_seq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/internal_advance_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_internal_advance_generator.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs shuffle.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/output_14_len_primer_final_primers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/output_14_len_primer_final_primers2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/miniconda3/lib/python3.12/_strptime.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,31 +64,40 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.advance_filtering.executor": "Debug",
+    "Python.BlastAndMultiplexPCR.executor": "Debug",
+    "Python.adv_filter_PP_Trie.executor": "Debug",
+    "Python.adv_filter_PP_Trie_Blast_seq.executor": "Debug",
+    "Python.advance_filtering.executor": "Run",
     "Python.advance_filtering_shuffle.executor": "Debug",
     "Python.internal_advance_generator.executor": "Run",
     "Python.max_independet_set.executor": "Debug",
     "Python.plotter.executor": "Run",
+    "Python.traceback.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/advance_generator",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/plot",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plot" />
+      <recent name="$PROJECT_DIR$/advanced_generator_2" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/advance_generator" />
       <recent name="$PROJECT_DIR$/graph-testing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/graph-testing" />
+      <recent name="$PROJECT_DIR$/plot" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/graph-testing" />
     </key>
   </component>
   <component name="RunManager">
@@ -264,6 +292,9 @@
       <workItem from="1716637396210" duration="2286000" />
       <workItem from="1716639912945" duration="46726000" />
       <workItem from="1717252342852" duration="1000000" />
+      <workItem from="1719149326741" duration="1047000" />
+      <workItem from="1719329903568" duration="730000" />
+      <workItem from="1720434584097" duration="39466000" />
     </task>
     <task id="LOCAL-00001" summary="primers orders generators">
       <created>1714828431919</created>
@@ -330,11 +361,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plotter.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph-testing/max_independet_set.py</url>
           <line>65</line>
           <option name="timeStamp" value="77" />
@@ -343,6 +369,46 @@
           <url>file://$PROJECT_DIR$/graph-testing/max_independet_set.py</url>
           <line>64</line>
           <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie_Blast_seq.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plot/plotter.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>123</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="161" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -362,9 +428,15 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DNA_Storage$max_independet_set.coverage" NAME="max_independet_set Coverage Results" MODIFIED="1716722454119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph-testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1720447973572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
     <SUITE FILE_PATH="coverage/DNA_Storage$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1716722070474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
     <SUITE FILE_PATH="coverage/DNA_Storage$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1716711005596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$traceback.coverage" NAME="traceback Coverage Results" MODIFIED="1720525348303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/miniconda3/lib/python3.12" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_PP_Trie.coverage" NAME="adv_filter_PP_Trie Coverage Results" MODIFIED="1720525679155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
     <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1717325020610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
-    <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering_shuffle.coverage" NAME="advance_filtering_shuffle Coverage Results" MODIFIED="1717325048788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering_shuffle.coverage" NAME="advance_filtering_shuffle Coverage Results" MODIFIED="1717446205522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_PP_Trie_Blast_seq.coverage" NAME="adv_filter_PP_Trie_Blast_seq Coverage Results" MODIFIED="1720507258141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1720515288904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$BlastAndMultiplexPCR.coverage" NAME="BlastAndMultiplexPCR Coverage Results" MODIFIED="1720507263667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
   </component>
 </project>

@@ -117,15 +117,22 @@ def check_if_contains_complement_patterns_in_primers_set(primer):
         complement_pattern = complement_primer[i: i + MAX_INTER_COMP]
         if complement_pattern in patterns_complement_of_max_inter_comp_len_set:
             return False
-        else:
-            patterns_complement_of_max_inter_comp_len_set.add(complement_pattern)
-
+        # else:
+        #     patterns_complement_of_max_inter_comp_len_set.add(complement_pattern)
+#due to check hamming distance before adding it
     return True
 
 def update_patterns_complement_of_max_inter_complement_len_set(primer):
     for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
         pattern = primer[i: i + MAX_INTER_COMP]
         patterns_of_min_ham_len_set.add(pattern)
+
+
+def update_complement_set(primer):
+    complement_primer = complement_strand(primer)
+    for i in range(PRIMER_BPS - MAX_INTER_COMP + 1):
+        complement_pattern = complement_primer[i: i + MAX_INTER_COMP]
+        patterns_complement_of_max_inter_comp_len_set.add(complement_pattern)
 
 
 def run():
@@ -150,14 +157,12 @@ def run():
     for primer in all_primers:
         if (i % 250000) == 0:
             print("Time: ", datetime.datetime.now(), " after: ", i, " strings from: ", len(all_primers), "\nsum primers: ", len(primer_set))
-
-        valid = check_hamming_distance(primer)
-
+        valid = check_if_contains_complement_patterns_in_primers_set(primer)
         if(valid):
-
-            valid = check_if_contains_complement_patterns_in_primers_set(primer)
-
+            valid = check_hamming_distance(primer)
             if(valid):
+                #update complement set
+                update_complement_set(primer)
                 #update_patterns_of_min_ham_len_set(primer)
                 #update_patterns_complement_of_max_inter_complement_len_set(primer)
                 #just add all of his complimentry to the set

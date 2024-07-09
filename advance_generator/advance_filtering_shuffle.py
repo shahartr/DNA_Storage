@@ -153,12 +153,11 @@ def run():
     for primer in all_primers:
         if (i % 250000) == 0:
             print("Time: ", datetime.datetime.now(), " after: ", i, " strings from: ", len(all_primers), "\nsum primers: ", len(primer_set))
-        valid = check_hamming_distance(primer)
+        valid = check_if_contains_complement_patterns_in_primers_set(primer)
+        if(valid):
+            valid = check_hamming_distance(primer)
 
         if(valid):
-            valid = check_if_contains_complement_patterns_in_primers_set(primer)
-
-            if(valid):
                 primer_set.add(primer)
         i = i + 1
 

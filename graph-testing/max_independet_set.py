@@ -44,7 +44,7 @@ def build_primer_graph(primer_list, min_hamming_distance, max_inter_complement_s
     #for 10 length 12 choose 2 = 2483000 choose 2 = 3.e+12 iteration !!!
 
     for primer1, primer2 in itertools.combinations(primer_list, 2):
-        hamming_dist =  hamming_distance(primer1, primer2)
+        hamming_dist = hamming_distance(primer1, primer2)
         if hamming_dist <= min_hamming_distance:
             G.add_edge(primer1, primer2, weight=hamming_dist)
 
