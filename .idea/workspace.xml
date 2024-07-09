@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
-      <change afterPath="$PROJECT_DIR$/advance_generator/output_14_len_primer_final_primers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/BlastAndMultiplexPCR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie_Blast_seq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/internal_advance_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_final_primers4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/advanced_generator_2/output_14_len_primer_internal_advance_generator.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs shuffle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot/output_14_len_primer_final_primers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot/output_14_len_primer_final_primers2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot/plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph-testing/max_independet_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" />
-    </list>
+    <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/plot",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/advanced_generator_2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,8 +67,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/plot" />
       <recent name="$PROJECT_DIR$/advanced_generator_2" />
+      <recent name="$PROJECT_DIR$/plot" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/advance_generator" />
       <recent name="$PROJECT_DIR$/graph-testing" />
@@ -294,7 +273,7 @@
       <workItem from="1717252342852" duration="1000000" />
       <workItem from="1719149326741" duration="1047000" />
       <workItem from="1719329903568" duration="730000" />
-      <workItem from="1720434584097" duration="39466000" />
+      <workItem from="1720434584097" duration="41513000" />
     </task>
     <task id="LOCAL-00001" summary="primers orders generators">
       <created>1714828431919</created>
