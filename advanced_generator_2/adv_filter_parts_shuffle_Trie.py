@@ -1,6 +1,7 @@
 import random
 import logging
 import sys
+from concurrent.futures import ProcessPoolExecutor
 
 MAX_HP = 2
 PRIMER_BPS = 14
@@ -111,7 +112,7 @@ def update_complement_set(primer, patterns_complement_of_max_inter_comp_len_set)
         complement_pattern = complement_primer[i: i + MAX_INTER_COMP]
         patterns_complement_of_max_inter_comp_len_set.add(complement_pattern)
 
-def process_primers(all_primers):
+def process_primers(all_primers,run_id):
     primer_set = set()
     patterns_complement_of_max_inter_comp_len_set = set()
     trie = Trie()
@@ -121,7 +122,7 @@ def process_primers(all_primers):
     for index, primer in enumerate(all_primers):
         if index % 100000 == 0:
             percent = "{:.2f}%".format(((index + 1) / len(all_primers)) * 100)
-            logging.info(f"Processing primer {index + 1}/{len(all_primers)} ({percent}% of the primers), valid primers: {len(primer_set)}")
+            logging.info(f"Run {run_id}: Processing primer {index + 1}/{len(all_primers)} ({percent}% of the primers), valid primers: {len(primer_set)}")
         #todo add heuristic filter?
         if check_if_contains_complement_patterns_in_primers_set(primer, patterns_complement_of_max_inter_comp_len_set):
             if trie.is_valid_primer(primer, MIN_HAM,histogram):
@@ -136,26 +137,33 @@ def process_primers(all_primers):
     logging.info(f"Number of primers filtered by max inter comp: {countHowManyPrimersFilteredByMaxInterComp}")
     return primer_set
 
-def main():
-    for i in range(8):
-         # Set up logging to file in logs folder
-        logging.basicConfig(filename=f'logs/run_{i+1}_log.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+def run_primer_processing(run_id):
+    logging.basicConfig(filename=f'logs/run_{run_id}_log_PP.txt', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-        logging.info("Starting primer processing")
-        with open('output_14_len_primer_internal_advance_generator.txt', 'r') as f:
-            all_primers = f.readlines()
+    logging.info("Starting primer processing")
+    with open('output_14_len_primer_internal_advance_generator.txt', 'r') as f:
+        all_primers = f.readlines()
 
-        all_primers = [item.strip() for item in all_primers]
-        random.shuffle(all_primers)
+    all_primers = [item.strip() for item in all_primers]
 
-        valid_primers = process_primers(all_primers)
+    num_parts = 320
+    part_size = len(all_primers) // num_parts
 
-        logging.info(f"Total valid primers: {len(valid_primers)}")
-        with open(f'logs/output_14_len_primer_final_primers3_run_{i+1}.txt', 'w') as f:
-            for primer in valid_primers:
-                f.write(f"{primer}\n")
+    shuffled_primers = []
+    for j in range(0, len(all_primers), part_size):
+        part = all_primers[j:j + part_size]
+        random.shuffle(part)
+        shuffled_primers.extend(part)
 
-        logging.info("Primer processing completed")
+    valid_primers = process_primers(shuffled_primers ,run_id )
 
-if __name__ == "__main__":
-    main()
+    logging.info(f"Total valid primers: {len(valid_primers)}")
+    with open(f'logs/output_14_len_primer_final_primers3_run_{run_id}.txt', 'w') as f:
+        for primer in valid_primers:
+            f.write(f"{primer}\n")
+
+    logging.info("Primer processing completed")
+
+if __name__ == '__main__':
+    with ProcessPoolExecutor(max_workers=8) as executor:
+        executor.map(run_primer_processing, range(1, 9))
