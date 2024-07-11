@@ -1,6 +1,6 @@
 import random
 import logging
-
+import trie as trie_utils
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -15,51 +15,6 @@ complement_map = {
 }
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-class TrieNode:
-    def __init__(self):
-        self.children = {}
-        self.is_end_of_primer = False
-
-class Trie:
-    def __init__(self):
-        self.root = TrieNode()
-
-    def insert(self, primer):
-        node = self.root
-        for char in primer:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node = node.children[char]
-        node.is_end_of_primer = True
-        
-        
-    # hamming distance is the number of positions at which the corresponding symbols are different
-    #in our case we need every primer in the final set to have hamming distance of at least 6(max_mismatches)
-    # basically we are searching (in tree that built from the primer added to the final set)
-    # for a primer with hamming distance less than max_mismatches
-    # if we find such primer then we return False
-    #  ( means that in the final set primer with hamming distance less than 6 is already present in the tree
-    # and that why we cant add him to the final set 
-    def search_with_hamming_distance(self, node, primer, lvl, mismatches, max_mismatches, histogram):
-        #case enough mismatches (hamming distance to all other in the set ) already found
-        if mismatches > max_mismatches:
-            return False
-        #case EndOf primer chaeck if the primer have hamming distance less than max_mismatches
-        # to all other in the final set (cant add it to the final set!)
-        if lvl == len(primer):
-            return node.is_end_of_primer and mismatches < max_mismatches
-
-        char = primer[lvl]
-        for child_char, child_node in node.children.items():
-            new_mismatches = mismatches + (1 if char != child_char else 0)
-            if self.search_with_hamming_distance(child_node, primer, lvl + 1, new_mismatches, max_mismatches,histogram):
-                histogram[lvl]+=1
-                return True#if found primer with hamming distance less than max_mismatches
-        return False
-
-    def is_valid_primer(self, primer, max_mismatches,histogram):
-        return not self.search_with_hamming_distance(self.root, primer, 0, 0, max_mismatches,histogram)
 
 def complement_strand(strand):
     try:
@@ -87,8 +42,6 @@ def max_homopolymer(strand):
             max_count = max(max_count, cur_count)
             cur_count = 1
     return max(max_count, cur_count)
-
-
 #huristic filter
 def unique_kmers(primer, k=4):
     kmers = set()
@@ -113,15 +66,13 @@ def update_complement_set(primer, patterns_complement_of_max_inter_comp_len_set)
 def process_primers(all_primers):
     primer_set = set()
     patterns_complement_of_max_inter_comp_len_set = set()
-    trie = Trie()
-    histogram = [0]*PRIMER_BPS
-    countHowManyPrimersFilteredByMaxInterComp = 0
+    trie = trie_utils.Trie()
+    histogram = [0]*(PRIMER_BPS)
+    count_primers_filtered_by_maxintercompliment = 0
 
-    for index, primer in enumerate(all_primers):
+    for index, primer in enumerate(all_primers):#(index, primer) = (0, 'TGGGAGGAGGAGGA')
         if index % 100000 == 0:
-            #(index + 1)/len(all_primers) with .2f precision
-            precent = "{:.2f}".format((index + 1)/len(all_primers))
-            logging.info(f"Processing primer {index + 1}/{len(all_primers)} ({precent}% of the primers), valid primers: {len(primer_set)}")
+            show_logs(all_primers, count_primers_filtered_by_maxintercompliment, histogram, index, primer_set, trie)
         #todo add heuristic filter?
         if check_if_contains_complement_patterns_in_primers_set(primer, patterns_complement_of_max_inter_comp_len_set):
             if trie.is_valid_primer(primer, MIN_HAM,histogram):
@@ -129,12 +80,24 @@ def process_primers(all_primers):
                 update_complement_set(primer,patterns_complement_of_max_inter_comp_len_set)
                 primer_set.add(primer)
         else:
-            countHowManyPrimersFilteredByMaxInterComp += 1
+            count_primers_filtered_by_maxintercompliment += 1
 
     for i in range(PRIMER_BPS):
         logging.info(f" at level {i} : {histogram[i]} primers throuwn away")
-    logging.info(f"Number of primers filtered by max inter comp: {countHowManyPrimersFilteredByMaxInterComp}")
+    logging.info(f"Number of primers filtered by max inter comp: {count_primers_filtered_by_maxintercompliment}")
     return primer_set
+
+
+def show_logs(all_primers, count_primers_filtered_by_maxintercompliment, histogram, index, primer_set, trie):
+    leaves = trie.count_leaves()
+    nodes = trie.count_tree_nodes()
+    percent = "{:.2f}%".format(((index + 1) / len(all_primers)) * 100)
+    logging.info(f" Processing primer {index + 1}/{len(all_primers)} ({percent}% of the primers), valid primers: {len(primer_set)}")
+    if index % 1000000 == 0 and index != 0:
+        logging.info(f" {histogram} primers disqualify by level")
+        logging.info(f" tree status: {leaves} leaves and {nodes} nodes")
+        logging.info(f" filtered by max inter comp: {count_primers_filtered_by_maxintercompliment} primers ")
+
 
 def main():
     logging.info("Starting primer processing")

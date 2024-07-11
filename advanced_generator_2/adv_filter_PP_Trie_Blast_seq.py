@@ -4,7 +4,7 @@ import primer3
 from Bio.SeqUtils import MeltingTemp as mt
 from Bio.Blast import NCBIWWW, NCBIXML
 from primer3 import calcHairpin, calcHomodimer
-
+import trie as trie_utils
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -19,39 +19,6 @@ complement_map = {
 }
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-class TrieNode:
-    def __init__(self):
-        self.children = {}
-        self.is_end_of_primer = False
-
-class Trie:
-    def __init__(self):
-        self.root = TrieNode()
-
-    def insert(self, primer):
-        node = self.root
-        for char in primer:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node = node.children[char]
-        node.is_end_of_primer = True
-
-    def search_with_hamming_distance(self, node, primer, index, mismatches, max_mismatches):
-        if mismatches > max_mismatches:
-            return False
-        if index == len(primer):
-            return node.is_end_of_primer and mismatches <= max_mismatches
-
-        char = primer[index]
-        for child_char, child_node in node.children.items():
-            new_mismatches = mismatches + (1 if char != child_char else 0)
-            if self.search_with_hamming_distance(child_node, primer, index + 1, new_mismatches, max_mismatches):
-                return True
-        return False
-
-    def is_valid_primer(self, primer, max_mismatches):
-        return not self.search_with_hamming_distance(self.root, primer, 0, 0, max_mismatches)
 
 def complement_strand(strand):
     try:
@@ -131,7 +98,7 @@ def check_secondary_structures(primer):
 def process_primers(all_primers):
     primer_set = set()
     patterns_complement_of_max_inter_comp_len_set = set()
-    trie = Trie()
+    trie = trie_utils.Trie()
 
     for index, primer in enumerate(all_primers):
         if index % 100000 == 0:

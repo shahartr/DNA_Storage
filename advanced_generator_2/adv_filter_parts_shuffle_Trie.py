@@ -2,7 +2,7 @@ import random
 import logging
 import sys
 from concurrent.futures import ProcessPoolExecutor
-
+import trie as trie_utils
 MAX_HP = 2
 PRIMER_BPS = 14
 MAX_SELF_COMP = 4
@@ -17,51 +17,6 @@ complement_map = {
 }
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-class TrieNode:
-    def __init__(self):
-        self.children = {}
-        self.is_end_of_primer = False
-
-class Trie:
-    def __init__(self):
-        self.root = TrieNode()
-
-    def insert(self, primer):
-        node = self.root
-        for char in primer:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node = node.children[char]
-        node.is_end_of_primer = True
-        
-        
-    #hamming distance is the number of positions at which the corresponding symbols are different
-    #in our case we need every primer in the final set to have hamming distance of at least 6(max_mismatches)
-    # basically we are searching (in tree that built from the primer added to the final set)
-    # for a primer with hamming distance less than max_mismatches
-    # if we find such primer then we return False
-    #  ( means that in the final set primer with hamming distance less than 6 is already present in the tree
-    # and that why we cant add him to the final set 
-    def search_with_hamming_distance(self, node, primer, lvl, mismatches, max_mismatches, histogram):
-        #case enough mismatches (hamming distance to all other in the set ) already found
-        if mismatches > max_mismatches:
-            return False
-        #case EndOf primer chaeck if the primer have hamming distance less than max_mismatches
-        # to all other in the final set (cant add it to the final set!)
-        if lvl == len(primer):
-            return node.is_end_of_primer and mismatches < max_mismatches
-
-        char = primer[lvl]
-        for child_char, child_node in node.children.items():
-            new_mismatches = mismatches + (1 if char != child_char else 0)
-            if self.search_with_hamming_distance(child_node, primer, lvl + 1, new_mismatches, max_mismatches,histogram):
-                histogram[lvl]+=1
-                return True #if found primer with hamming distance less than max_mismatches
-        return False
-
-    def is_valid_primer(self, primer, max_mismatches,histogram):
-        return not self.search_with_hamming_distance(self.root, primer, 0, 0, max_mismatches,histogram)
 
 def complement_strand(strand):
     try:
@@ -115,7 +70,7 @@ def update_complement_set(primer, patterns_complement_of_max_inter_comp_len_set)
 def process_primers(all_primers,run_id):
     primer_set = set()
     patterns_complement_of_max_inter_comp_len_set = set()
-    trie = Trie()
+    trie = trie_utils.Trie()
     histogram = [0]*PRIMER_BPS
     countHowManyPrimersFilteredByMaxInterComp = 0
 
