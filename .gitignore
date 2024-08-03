@@ -8,6 +8,7 @@
 venv/
 ENV/
 
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -51,10 +52,10 @@ wheels/
 *.egg
 
 # txt files
-advance_generator/output_9_len_primer_internal_advance_generator.txt
-graph-testing/output_10_len_primer_internal_advance_generator.txt
-advance_generator/output_11_len_primer_internal_advance_generator.txt
-advance_generator/output_12_len_primer_internal_advance_generator.txt
-advance_generator/output_13_len_primer_internal_advance_generator.txt
-advance_generator/output_14_len_primer_internal_advance_generator.txt
-advance_generator/output_15_len_primer_internal_advance_generator.txt
+generator/advance_generator/output_9_len_primer_internal_advance_generator.txt
+validator/mis-validator/output_10_len_primer_internal_advance_generator.txt
+generator/advance_generator/output_11_len_primer_internal_advance_generator.txt
+generator/advance_generator/output_12_len_primer_internal_advance_generator.txt
+generator/advance_generator/output_13_len_primer_internal_advance_generator.txt
+generator/advance_generator/output_14_len_primer_internal_advance_generator.txt
+validator/trie-validator/output_15_len_primer_internal_advance_generator.txt
