@@ -5,39 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e84e76b-3523-4e8c-9664-f29f0b50fce4" name="Changes" comment="advance_filtering 2-2">
-      <change afterPath="$PROJECT_DIR$/data/plotter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/plotter2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/mis-validator/checkfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/advance_generator/advance_filtering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/advance_filtering_shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/advance_generator/advance_filtering_shuffle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advance_generator/internal_advance_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/advance_generator/internal_advance_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/BlastAndMultiplexPCR.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/adv_filter_PP_Trie_Blast_seq.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/adv_filter_parts_shuffle_Trie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/adv_filter_shuffle_Trie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/internal_advance_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/advanced_generator_2/trie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph-testing/max_independet_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph-testing/output_12_len_primer_internal_advance_generator.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs shuffle.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myplot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/naive_generator/naive_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/naive_generator/naive_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parallel_primers_generator/parallel_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/parallel_primers_generator/parallel_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plotter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plotter2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/primers_order_comprasion_generator/primers_random_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_random_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primers_order_comprasion_generator/primers_start_with_A_and_C_alternatly_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_A_and_C_alternatly_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primers_order_comprasion_generator/primers_start_with_all_A_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_all_A_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primers_order_comprasion_generator/primers_start_with_all_C_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_all_C_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primers_order_comprasion_generator/primers_start_with_half_A_half_C_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_half_A_half_C_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/plotter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/plotter2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/advance_generator/advance_filtering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/advance_generator/advance_filtering_shuffle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/advance_generator/internal_advance_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/naive_generator/naive_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/parallel_primers_generator/parallel_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_random_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_A_and_C_alternatly_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_all_A_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_all_C_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator/primers_order_comprasion_generator/primers_start_with_half_A_half_C_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/mis-validator/checkfile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/mis-validator/max_independet_set.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/20 mer testing/internal_advance_generator_20.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/adv_filter_PP_Trie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/adv_filter_parts_shuffle_Trie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/adv_filter_shuffle_Trie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/internal_advance_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/trie-validator/trie.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +53,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2fzwmFtnndefd6xr0gQzWQe0Mde" />
   <component name="ProjectLevelVcsManager">
@@ -74,25 +66,48 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests in test_complimentary.py.executor": "Run",
+    "Python.15+.executor": "Run",
     "Python.BlastAndMultiplexPCR.executor": "Debug",
     "Python._oldcore.executor": "Run",
-    "Python.adv_filter_15+_Trie.executor": "Debug",
+    "Python.adv_filter_15+_Trie.executor": "Run",
+    "Python.adv_filter_15+_Trie_V.executor": "Run",
+    "Python.adv_filter_15+_Trie_V_fixed_complimentary.executor": "Debug",
+    "Python.adv_filter_15+_Trie_V_fixed_complimentary_ref.executor": "Run",
     "Python.adv_filter_PP_Trie.executor": "Debug",
     "Python.adv_filter_PP_Trie_Blast_seq.executor": "Debug",
-    "Python.advance_filtering.executor": "Run",
+    "Python.advance_filtering.executor": "Debug",
     "Python.advance_filtering_shuffle.executor": "Debug",
+    "Python.all_phases_but_screening.executor": "Run",
+    "Python.blast_screening.executor": "Debug",
+    "Python.check 2.executor": "Run",
+    "Python.checkPrimer3.executor": "Debug",
+    "Python.check_primers.executor": "Run",
+    "Python.check_secondary_structure.executor": "Debug",
     "Python.checkfile.executor": "Run",
+    "Python.complimentary.executor": "Debug",
+    "Python.dummycheck.executor": "Debug",
+    "Python.fastacreator.executor": "Run",
+    "Python.final_process.executor": "Run",
     "Python.internal_advance_generator.executor": "Run",
+    "Python.internal_advance_generator_20.executor": "Run",
+    "Python.internal_advance_generator_20_V.executor": "Run",
     "Python.max_independet_set.executor": "Debug",
     "Python.plotter.executor": "Run",
     "Python.plotter2.executor": "Debug",
+    "Python.second_phase.executor": "Run",
+    "Python.secondary_structure_check.executor": "Run",
+    "Python.sortChunks.executor": "Run",
+    "Python.sort_parts.executor": "Debug",
+    "Python.sort_primers.executor": "Run",
+    "Python.tm_and_2nd_structure_V.executor": "Run",
     "Python.traceback.executor": "Debug",
     "Python.trie.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/validator/trie-validator/20 mer testing",
+    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/validator/trie-validator/20mer_validation/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,21 +124,45 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
+      <recent name="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
       <recent name="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
       <recent name="$PROJECT_DIR$/validator/trie-validator" />
       <recent name="$PROJECT_DIR$/plot" />
-      <recent name="$PROJECT_DIR$/advanced_generator_2" />
-      <recent name="C:\Users\Saar Cohen\Documents\GitHub\DNA_Storage\advanced_generator_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr" />
+      <recent name="$PROJECT_DIR$/src/primers_validation/trie-validator/general" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/primer_generation/testing" />
       <recent name="$PROJECT_DIR$/validator" />
-      <recent name="$PROJECT_DIR$/generator" />
-      <recent name="$PROJECT_DIR$/advanced_generator_2" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="15+" type="PythonConfigurationType" factoryName="Python" singleton="false">
+      <module name="DNA_Storage" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="$USER_HOME$/miniconda3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validator/trie-validator/20 mer testing/adv_filter_15+_Trie.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
@@ -147,7 +186,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="advance_filtering" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="adv_filter_15+_Trie_V" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DNA_Storage" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validator/trie-validator/20mer_validation/adv_filter_15+_Trie_V.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="advance_filtering" type="PythonConfigurationType" factoryName="Python" singleton="false" nameIsGenerated="true">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,6 +232,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="check 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DNA_Storage" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/validator/trie-validator/20mer_validation/check 2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="internal_advance_generator" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
@@ -180,7 +265,7 @@
       </envs>
       <option name="SDK_HOME" value="C:\Users\Saar Cohen\Documents\GitHub\DNA_Storage\bin\python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/advance_generator" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -203,7 +288,7 @@
       </envs>
       <option name="SDK_HOME" value="C:\Users\Saar Cohen\Documents\GitHub\DNA_Storage\bin\python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/naive_generator" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -226,7 +311,7 @@
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/primers_order_comprasion_generator" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -249,7 +334,7 @@
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/primers_order_comprasion_generator" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -286,6 +371,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.15+" />
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.advance_filtering" />
       <item itemvalue="Python.internal_advance_generator" />
@@ -293,7 +379,15 @@
       <item itemvalue="Python.primers_random_generator" />
       <item itemvalue="Python.primers_start_with_all_A_generator" />
       <item itemvalue="Python.primers_start_with_all_C_generator" />
+      <item itemvalue="Python.adv_filter_15+_Trie_V" />
+      <item itemvalue="Python.check 2" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.check 2" />
+        <item itemvalue="Python.adv_filter_15+_Trie_V" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -321,7 +415,9 @@
       <workItem from="1720788981835" duration="38059000" />
       <workItem from="1721554258058" duration="2554000" />
       <workItem from="1722514142536" duration="184000" />
-      <workItem from="1722611244947" duration="23251000" />
+      <workItem from="1722611244947" duration="198479000" />
+      <workItem from="1724403109606" duration="2197000" />
+      <workItem from="1724920753478" duration="1632000" />
     </task>
     <task id="LOCAL-00001" summary="primers orders generators">
       <created>1714828431919</created>
@@ -388,114 +484,144 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/mis-validator/max_independet_set.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/mis-validator_wip/max_independet_set.py</url>
           <line>65</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/mis-validator/max_independet_set.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/mis-validator_wip/max_independet_set.py</url>
           <line>64</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/plotter2.py</url>
+          <url>file://$PROJECT_DIR$/src/plotters/plotter2.py</url>
           <line>4</line>
           <option name="timeStamp" value="195" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py</url>
-          <line>76</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/adv_filter_PP_Trie_Blast_seq.py</url>
-          <line>78</line>
-          <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
           <line>59</line>
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
           <line>58</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/plotter2.py</url>
+          <url>file://$PROJECT_DIR$/src/plotters/plotter2.py</url>
           <line>16</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/plotter2.py</url>
+          <url>file://$PROJECT_DIR$/src/plotters/plotter2.py</url>
           <line>17</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/plotter2.py</url>
+          <url>file://$PROJECT_DIR$/src/plotters/plotter2.py</url>
           <line>18</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/plotter2.py</url>
+          <url>file://$PROJECT_DIR$/src/plotters/plotter2.py</url>
           <line>19</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
           <line>57</line>
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/blast-multiplex-pcr/BlastAndMultiplexPCR.py</url>
           <line>81</line>
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_PP_Trie.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="242" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/internal_advance_generator_20.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="244" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/sort_parts.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="245" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/sort_parts.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="246" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/adv_filter_15+_Trie.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="247" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/adv_filter_15+_Trie.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/validator/trie-validator/adv_filter_15+_Trie.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="248" />
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/adv_filter_15+_Trie.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20 mer testing/adv_filter_15+_Trie.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/complimentary.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/blast_screening.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="335" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/blast_screening.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="337" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/adv_filter_15+_Trie_V_fixed_complimentary.py</url>
+          <line>91</line>
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/blast_screening.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="352" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/blast_screening.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="353" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/blast_screening.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="354" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/all_phases_but_screening.py</url>
+          <line>111</line>
+          <option name="timeStamp" value="356" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/dummycheck.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="374" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation/screening_and_validation_wip/check_secondary_structure.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="386" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -514,24 +640,47 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DNA_Storage$max_independet_set.coverage" NAME="max_independet_set Coverage Results" MODIFIED="1716722454119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph-testing" />
-    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1722671660375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$sortChunks.coverage" NAME="sortChunks Coverage Results" MODIFIED="1722755753937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing/tmp2" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1720447973572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
     <SUITE FILE_PATH="coverage/DNA_Storage$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1716711005596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$trie.coverage" NAME="trie Coverage Results" MODIFIED="1720685222952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
-    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$traceback.coverage" NAME="traceback Coverage Results" MODIFIED="1720601922899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/miniconda3/lib/python3.12" />
-    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$plotter2.coverage" NAME="plotter2 Coverage Results" MODIFIED="1720705967288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$checkPrimer3.coverage" NAME="checkPrimer3 Coverage Results" MODIFIED="1723999540566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$dummycheck.coverage" NAME="dummycheck Coverage Results" MODIFIED="1724144850934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
     <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering.coverage" NAME="advance_filtering Coverage Results" MODIFIED="1717325020610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$secondary_structure_check.coverage" NAME="secondary_structure_check Coverage Results" MODIFIED="1722787881186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_PP_Trie_Blast_seq.coverage" NAME="adv_filter_PP_Trie_Blast_seq Coverage Results" MODIFIED="1720507258141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$sort_parts.coverage" NAME="sort_parts Coverage Results" MODIFIED="1722754252665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing/tmp2" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$fastacreator.coverage" NAME="fastacreator Coverage Results" MODIFIED="1723979905692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$all_phases_but_screening.coverage" NAME="all_phases_but_screening Coverage Results" MODIFIED="1724922381684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/primers_validation/trie-validator/20mer_validation" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$BlastAndMultiplexPCR.coverage" NAME="BlastAndMultiplexPCR Coverage Results" MODIFIED="1720709883951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$_oldcore.coverage" NAME="_oldcore Coverage Results" MODIFIED="1720702872468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/miniconda3/lib/python3.12/site-packages/seaborn" />
     <SUITE FILE_PATH="coverage/DNA_Storage$adv_filter_shuffle_Trie.coverage" NAME="adv_filter_shuffle_Trie Coverage Results" MODIFIED="1720592795261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$checkfile.coverage" NAME="checkfile Coverage Results" MODIFIED="1722675421933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/mis-validator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$blast_screening.coverage" NAME="blast_screening Coverage Results" MODIFIED="1723980434223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
     <SUITE FILE_PATH="coverage/DNA_Storage$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1716722070474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$complimentary.coverage" NAME="complimentary Coverage Results" MODIFIED="1723901471918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_PP_Trie.coverage" NAME="adv_filter_PP_Trie Coverage Results" MODIFIED="1722616052255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$sort_primers.coverage" NAME="sort_primers Coverage Results" MODIFIED="1722716258788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$final_process.coverage" NAME="final_process Coverage Results" MODIFIED="1723885815645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
     <SUITE FILE_PATH="coverage/DNA_Storage$advance_filtering_shuffle.coverage" NAME="advance_filtering_shuffle Coverage Results" MODIFIED="1717446205522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advance_generator" />
-    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_15__Trie.coverage" NAME="adv_filter_15+_Trie Coverage Results" MODIFIED="1722685139034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator" />
     <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$plotter.coverage" NAME="plotter Coverage Results" MODIFIED="1721122250045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$internal_advance_generator_20_V.coverage" NAME="internal_advance_generator_20_V Coverage Results" MODIFIED="1723995066761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$internal_advance_generator.coverage" NAME="internal_advance_generator Coverage Results" MODIFIED="1722671660375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator" />
+    <SUITE FILE_PATH="coverage/DNA_Storage$max_independet_set.coverage" NAME="max_independet_set Coverage Results" MODIFIED="1716722454119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph-testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_15__Trie_V_fixed_complimentary.coverage" NAME="adv_filter_15+_Trie_V_fixed_complimentary Coverage Results" MODIFIED="1723965681490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$check_secondary_structure.coverage" NAME="check_secondary_structure Coverage Results" MODIFIED="1724236756244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$tm_and_2nd_structure_V.coverage" NAME="tm_and_2nd_structure_V Coverage Results" MODIFIED="1723299682424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$trie.coverage" NAME="trie Coverage Results" MODIFIED="1720685222952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$traceback.coverage" NAME="traceback Coverage Results" MODIFIED="1720601922899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/miniconda3/lib/python3.12" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$plotter2.coverage" NAME="plotter2 Coverage Results" MODIFIED="1720705967288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$check_primers.coverage" NAME="check_primers Coverage Results" MODIFIED="1722857881350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_15__Trie_V_fixed_complimentary_ref.coverage" NAME="adv_filter_15+_Trie_V_fixed_complimentary_ref Coverage Results" MODIFIED="1723979304433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$.coverage" NAME=" Coverage Results" MODIFIED="1723902591251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation/data" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$internal_advance_generator_20.coverage" NAME="internal_advance_generator_20 Coverage Results" MODIFIED="1722791499804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_15__Trie_V.coverage" NAME="adv_filter_15+_Trie_V Coverage Results" MODIFIED="1723973251888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$15_.coverage" NAME="15+ Coverage Results" MODIFIED="1722773926721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$adv_filter_15__Trie.coverage" NAME="adv_filter_15+_Trie Coverage Results" MODIFIED="1722788461812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20 mer testing" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$check_2.coverage" NAME="check 2 Coverage Results" MODIFIED="1723298792238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
     <SUITE FILE_PATH="coverage/DNA_Storage$adv_filter_parts_shuffle_Trie.coverage" NAME="adv_filter_parts_shuffle_Trie Coverage Results" MODIFIED="1720594805627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/advanced_generator_2" />
+    <SUITE FILE_PATH="coverage/advance_filtering_shuffle_py$second_phase.coverage" NAME="second_phase Coverage Results" MODIFIED="1723995178216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validator/trie-validator/20mer_validation" />
   </component>
 </project>

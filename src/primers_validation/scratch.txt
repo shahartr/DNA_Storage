@@ -1,0 +1,7 @@
+both methods are supposed to take new approach solving the hamming distance problem
+*/
+
+
+
+
+wip= work in progress
