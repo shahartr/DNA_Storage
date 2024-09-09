@@ -1,4 +1,3 @@
-
 class TrieNode:
     def __init__(self):
         self.children = {}
@@ -38,7 +37,7 @@ class Trie:
         return count
 
     # hamming distance is the number of positions at which the corresponding symbols are different
-    #in our case we need every primer in the final set to have hamming distance of at least 6
+    # in our case we need every primer in the final set to have hamming distance of at least 6
     # basically we are searching (in tree that built from the primer added to the final set)
     # for a primer with hamming distance less than min_hamming
     # if we find such primer then we return False
@@ -60,7 +59,8 @@ class Trie:
         for child_char, child_node in node.children.items():
             new_hamming_distance = hamming_distance + (1 if char != child_char else 0)
 
-            if self.search_with_hamming_distance(child_node, primer, lvl + 1, new_hamming_distance, min_hamming, histogram, found_invalid):
+            if self.search_with_hamming_distance(child_node, primer, lvl + 1, new_hamming_distance, min_hamming,
+                                                 histogram, found_invalid):
                 return True  # if found primer with hamming distance less than max_mismatches
 
         # if we've tried all children and haven't found a match
@@ -72,3 +72,5 @@ class Trie:
     def is_valid_primer(self, primer, max_mismatches, histogram):
         found_invalid = [False]
         return not self.search_with_hamming_distance(self.root, primer, 0, 0, max_mismatches, histogram, found_invalid)
+
+
