@@ -1,14 +1,20 @@
-.idea/
+.idea
 
 # dotenv
 .env
+ #ds_store
+.DS_Store
+
+
 
 # virtualenv
 .venv
 venv/
 ENV/
-
-
+#pyvenv.cfg
+pyvenv.cfg
+.idea
+.gitignore
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

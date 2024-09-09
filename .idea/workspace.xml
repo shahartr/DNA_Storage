@@ -63,80 +63,80 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests in test_complimentary.py.executor": "Run",
-    "Python.15+.executor": "Run",
-    "Python.BlastAndMultiplexPCR.executor": "Debug",
-    "Python._oldcore.executor": "Run",
-    "Python.accurate_timing.executor": "Run",
-    "Python.adv_filter_15+_Trie.executor": "Run",
-    "Python.adv_filter_15+_Trie_V.executor": "Run",
-    "Python.adv_filter_15+_Trie_V_fixed_complimentary.executor": "Debug",
-    "Python.adv_filter_15+_Trie_V_fixed_complimentary_ref.executor": "Run",
-    "Python.adv_filter_PP_Trie.executor": "Debug",
-    "Python.adv_filter_PP_Trie_Blast_seq.executor": "Debug",
-    "Python.advance_filtering.executor": "Debug",
-    "Python.advance_filtering_shuffle.executor": "Debug",
-    "Python.all_phases_but_screening.executor": "Debug",
-    "Python.all_phases_temp_first.executor": "Run",
-    "Python.blast.executor": "Debug",
-    "Python.blast_screening.executor": "Debug",
-    "Python.check 2.executor": "Run",
-    "Python.checkPrimer3.executor": "Debug",
-    "Python.check_primers.executor": "Run",
-    "Python.check_secondary_structure.executor": "Debug",
-    "Python.checkfile.executor": "Run",
-    "Python.complimentary.executor": "Debug",
-    "Python.dummycheck.executor": "Debug",
-    "Python.fasta_create.executor": "Run",
-    "Python.fastacreator.executor": "Run",
-    "Python.final_benchmark.executor": "Run",
-    "Python.final_benchmark_sorted.executor": "Run",
-    "Python.final_process.executor": "Run",
-    "Python.internal_advance_generator.executor": "Run",
-    "Python.internal_advance_generator_20.executor": "Run",
-    "Python.internal_advance_generator_20_V.executor": "Run",
-    "Python.max_independet_set.executor": "Debug",
-    "Python.plotter.executor": "Run",
-    "Python.plotter2.executor": "Debug",
-    "Python.primers_generator.executor": "Run",
-    "Python.primers_trie_tree.executor": "Run",
-    "Python.primers_validator.executor": "Run",
-    "Python.second_phase.executor": "Run",
-    "Python.secondary_structure_check.executor": "Run",
-    "Python.sortChunks.executor": "Run",
-    "Python.sort_parts.executor": "Debug",
-    "Python.sort_primers.executor": "Run",
-    "Python.testss.executor": "Run",
-    "Python.thread.executor": "Debug",
-    "Python.timing.executor": "Run",
-    "Python.timing_generator.executor": "Run",
-    "Python.timing_naive.executor": "Run",
-    "Python.tm.executor": "Debug",
-    "Python.tm_and_2nd_structure_V.executor": "Run",
-    "Python.traceback.executor": "Debug",
-    "Python.trie.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "arrangement__and__final__process",
-    "last_opened_file_path": "/Users/saarco/Documents/GitHub/DNA_Storage/src/benchmarks",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests in test_complimentary.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.15+.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BlastAndMultiplexPCR.executor&quot;: &quot;Debug&quot;,
+    &quot;Python._oldcore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.accurate_timing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.adv_filter_15+_Trie.executor&quot;: &quot;Run&quot;,
+    &quot;Python.adv_filter_15+_Trie_V.executor&quot;: &quot;Run&quot;,
+    &quot;Python.adv_filter_15+_Trie_V_fixed_complimentary.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.adv_filter_15+_Trie_V_fixed_complimentary_ref.executor&quot;: &quot;Run&quot;,
+    &quot;Python.adv_filter_PP_Trie.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.adv_filter_PP_Trie_Blast_seq.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.advance_filtering.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.advance_filtering_shuffle.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.all_phases_but_screening.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.all_phases_temp_first.executor&quot;: &quot;Run&quot;,
+    &quot;Python.blast.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.blast_screening.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.check 2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.checkPrimer3.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.check_primers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_secondary_structure.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.checkfile.executor&quot;: &quot;Run&quot;,
+    &quot;Python.complimentary.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.dummycheck.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.fasta_create.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fastacreator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.final_benchmark.executor&quot;: &quot;Run&quot;,
+    &quot;Python.final_benchmark_sorted.executor&quot;: &quot;Run&quot;,
+    &quot;Python.final_process.executor&quot;: &quot;Run&quot;,
+    &quot;Python.internal_advance_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.internal_advance_generator_20.executor&quot;: &quot;Run&quot;,
+    &quot;Python.internal_advance_generator_20_V.executor&quot;: &quot;Run&quot;,
+    &quot;Python.max_independet_set.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.plotter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plotter2.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.primers_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.primers_trie_tree.executor&quot;: &quot;Run&quot;,
+    &quot;Python.primers_validator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.second_phase.executor&quot;: &quot;Run&quot;,
+    &quot;Python.secondary_structure_check.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sortChunks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sort_parts.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.sort_primers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testss.executor&quot;: &quot;Run&quot;,
+    &quot;Python.thread.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.timing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.timing_generator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.timing_naive.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tm.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.tm_and_2nd_structure_V.executor&quot;: &quot;Run&quot;,
+    &quot;Python.traceback.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.trie.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;arrangement__and__final__process&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/saarco/Documents/GitHub/DNA_Storage/src/benchmarks&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/benchmarks" />
@@ -153,7 +153,7 @@
       <recent name="$PROJECT_DIR$/src/primers_validation/trie-validator/general" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.15+">
     <configuration name="15+" type="PythonConfigurationType" factoryName="Python" singleton="false">
       <module name="DNA_Storage" />
       <option name="ENV_FILES" value="" />
