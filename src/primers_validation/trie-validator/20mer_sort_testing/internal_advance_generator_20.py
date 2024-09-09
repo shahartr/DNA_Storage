@@ -1,4 +1,5 @@
 import logging
+import random
 import sys
 import datetime
 import matplotlib.pyplot as plt
@@ -6,12 +7,13 @@ primer_library = []
 count_primers_list = []
 time_list = []
 MAX_HP = 4
-PRIMER_BPS = 15
+PRIMER_BPS = 20
 MAX_SELF_COMP = 4
 MAX_INTER_COMP = 10
 MIN_HAM = 6
 MIN_GC = 0.4
 MAX_GC = 0.6
+NUM_PRIMERS = 10000000
 
 complement_map = {
     'G': 'C',
@@ -57,21 +59,8 @@ def contains_complement(strand1, strand2, length):
     return False
 
 # sequentially count through possible strands of DNA, using the lexigraphic order of the nucleotides
-def next_primer(strand):
-    suffix = ""
-    for i in range((len(strand) - 1), -1, -1):
-        if strand[i] == 'A':
-            suffix = 'C' + suffix
-            break
-        elif strand[i] == 'C':
-            suffix = 'G' + suffix
-            break
-        elif strand[i] == 'G':
-            suffix = 'T' + suffix
-            break
-        else:
-            suffix = 'A' + suffix
-    return strand[0:len(strand) - len(suffix)] + suffix
+def next_primer(strand, length=PRIMER_BPS):
+    return ''.join(random.choices('AGCT', k=length))
 
 def get_first_primer():
     first_primer = ""
@@ -83,20 +72,20 @@ def get_first_primer():
 
 def save_primers(primer_library):
     #save primer into 4 files each file contains 1/4 of the primers
-    for i in range(4):
-        with open(f'../mis-validator/output_{PRIMER_BPS}_len_primer_internal_advance_generator_{i}.txt', 'w') as f:
-            for item in primer_library[i::4]:
+    for i in range(5):
+        with open(f'output_{PRIMER_BPS}_len_primer_internal_advance_generator_{i}.txt', 'w') as f:
+            for item in primer_library[i::5]:
                 f.write("%s\n" % item)
 
 
 
 def run():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    print("Start running time:" , datetime.datetime.now())
+    print("Start running time:", datetime.datetime.now())
     primer = get_first_primer()
 
     start = datetime.datetime.now()
-    length= 4 ** PRIMER_BPS
+    length= NUM_PRIMERS
     for i in range(length):
         if (i % 5000000) == 0:
             currentTime = datetime.datetime.now()
@@ -111,7 +100,8 @@ def run():
                 time_diff = time_diff / i
                 time_diff = time_diff * (length - i)
                 time_diff = datetime.timedelta(seconds=time_diff)
-                logging.info(f"Approx days left: {time_diff.days} days")
+                minutes = time_diff.seconds // 60
+                logging.info(f"Approx {minutes} minutes left")
 
         primer = next_primer(primer)
 
@@ -130,27 +120,10 @@ def run():
 
         primer_library.append(primer)
 
-    print("")
     #print(primer_library)
     print(len(primer_library))
 
-    # plt.figure(figsize=(10, 6))
-    plt.plot(count_primers_list, time_list, marker='o', linestyle='-', color='b')
-
-    # Step 3: Format the plot
-    plt.title('Counts Primers Over Time')
-    plt.xlabel('Time')
-    plt.ylabel('Count')
-    plt.grid(True)
-
-    # Rotate date labels for better readability
-    plt.xticks(rotation=45)
-
-    # Show the plot
-    plt.tight_layout()
-    plt.show()
-
-    save_primers(primer_library)
+    save_primers(list(primer_library))
     # with open('../mis-validator/output_20_len_primer_internal_advance_generator.txt', 'w') as f:
     #     for item in primer_library:
     #         f.write("%s\n" % item)
