@@ -66,4 +66,6 @@ src/primers_generation/advance_generator/output_13_len_primer_internal_advance_g
 src/primers_generation/advance_generator/output_14_len_primer_internal_advance_generator.txt
 src/primers_validation/trie-validator/output_15_len_primer_internal_advance_generator.txt
 /data
-/data
+/.idea
+/pyvenv.cfg
+/.gitignore
