@@ -1,6 +1,5 @@
 [Primer Library Design for Random Access DNA Storage
 ](src/benchmarks/final_benchmark_full_pipeline.py )
-![logo2](https://github.com/Saarco99/DNA-Storage/assets/95081597/be750694-9ca7-4517-94ab-a87884028adf)
 
 ### **Overview**
 
@@ -67,3 +66,4 @@ results:
 ![sorted_unsorted.jpg](extra%2Fsorted_unsorted.jpg)
 ![timing.jpg](extra%2Ftiming.jpg)
 ![hamming_distance with trie-tree.jpg](extra%2Fhamming_distance%20with%20trie-tree.jpg)
+![logo2](https://github.com/Saarco99/DNA-Storage/assets/95081597/be750694-9ca7-4517-94ab-a87884028adf)
