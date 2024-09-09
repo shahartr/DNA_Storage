@@ -9,7 +9,7 @@ from Bio.Seq import Seq
 from nupack import mfe
 import nupack
 from primer3 import calc_tm
-from utils import primers_trie_tree as trie_utils
+import primers_trie_tree as trie_utils
 
 # Configuration and Constants
 MAX_HP = 2
@@ -17,10 +17,11 @@ PRIMER_BPS = 20
 MAX_SELF_COMP = 4
 MAX_INTER_COMP = 10
 MIN_HAM = 6
+nupack_model = nupack.Model(material='dna', celsius=37, sodium=0.05, magnesium=0.0015)
 MIN_GC = 0.45
 MAX_GC = 0.55
 MIN_GC_CLAMPS = 3
-NUM_PRIMERS = 1_000_000
+NUM_PRIMERS = 100_000_000
 
 complement_map = {
     'G': 'C',
@@ -28,7 +29,6 @@ complement_map = {
     'T': 'A',
     'A': 'T'
 }
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def complement_strand(strand):
@@ -37,10 +37,14 @@ def complement_strand(strand):
         complement += complement_map[base]
     return complement
 
+def gc_clamp(strand, min_clamp=MIN_GC_CLAMPS):
+    """ check if a strand of DNA has a GC clamp at the 3' end"""
+    return strand[-min_clamp:].count('G') + strand[-min_clamp:].count('C') >= min_clamp
 
-def cg_percent(strand):
+
+def cg_percent(strand, strnad_len=PRIMER_BPS):
     """ calculate the percent of CG in a strand of DNA"""
-    return (strand.count('C') + strand.count('G')) / len(strand)
+    return (strand.count('C') + strand.count('G')) / strnad_len
 
 
 def max_homo_polymer(strand):
@@ -83,7 +87,7 @@ def get_next_random_primer(length=PRIMER_BPS):
 
 def save_primers(primer_library):
     # save primer into 4 files each file contains 1/4 of the primers
-    with open(f'output_{PRIMER_BPS}_sorted_{NUM_PRIMERS}.txt', 'w') as f:
+    with open(f'output_{PRIMER_BPS}_sorted2_{NUM_PRIMERS}.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
@@ -91,6 +95,7 @@ def save_primers(primer_library):
 def sort_primers(primers_library):
     # sort DNA (A, C, G, T) in lexicographical order
     primers_library.sort()
+    #pass
 
 def print_logs2(i, length, start, time_list, count_primers_list, primers_library):
     currentTime = datetime.datetime.now()
@@ -106,7 +111,6 @@ def print_logs2(i, length, start, time_list, count_primers_list, primers_library
         time_diff = time_diff / i
         time_diff = time_diff * (length - i)
         time_diff = datetime.timedelta(seconds=time_diff)
-        minutes = time_diff.seconds // 60
         logging.info(f"Approx {time_diff.seconds} seconds left")
 
 def run():
@@ -129,6 +133,7 @@ def run():
     time_homopolymer = 0
     time_self_complement = 0
     primer_len = PRIMER_BPS
+    time_gc_clamp = 0
 
     for i in tqdm.tqdm(range(length)):
         # if (i % 500000) == 0:
@@ -137,14 +142,14 @@ def run():
         # Measure time for GC Content
         start_gc = time.time()
         percent = cg_percent(primer)
-        time_gc_content += time.time() - start_gc
-        if percent < MIN_GC or percent > MAX_GC:
+        if percent < min_gc or percent > max_gc:
+            time_gc_content += time.time() - start_gc
             count_gc_disqualified += 1
             continue
-
+        time_gc_content += time.time() - start_gc
         # Measure time for homo-polymer check
         start_hp = time.time()
-        if max_homo_polymer(primer) > MAX_HP:
+        if max_homo_polymer(primer) > max_hp:
             time_homopolymer += time.time() - start_hp
             count_hp_disqualified += 1
             continue
@@ -152,7 +157,7 @@ def run():
 
         # Measure time for self-complementarity
         start_self_comp = time.time()
-        if contains_self_complement(primer, MAX_SELF_COMP):
+        if contains_self_complement(primer, max_self_comp):
             time_self_complement += time.time() - start_self_comp
             count_self_comp_disqualified += 1
             continue
@@ -161,7 +166,7 @@ def run():
         primers_library.append(primer)
 
     logging.info(f"Total time for GC content check: {time_gc_content:.2f} seconds")
-    logging.info(f"Total time for homo-polymer check: {time_homopolymer:.2f} seconds")
+    logging.info(f"Total time for homopolymer check: {time_homopolymer:.2f} seconds")
     logging.info(f"Total time for self-complement check: {time_self_complement:.2f} seconds")
 
     logging.info(f"Number of primers disqualified by GC content: {count_gc_disqualified}")
@@ -176,8 +181,8 @@ def run():
 
 
 
-def print_logs(index, count_primers_filtered_by_max_inter_compliment
-               , primer_set, trie, count_primers_disqualify_by_tm,
+def print_logs(index, count_primers_filtered_by_max_inter_compliment,
+               histogram, primer_set, trie, count_primers_disqualify_by_tm,
                count_primers_disqualify_by_secondary_structure,
                count_primers_disqualify_by_hamming_distance):
     leaves = trie.count_leaves()
@@ -186,6 +191,7 @@ def print_logs(index, count_primers_filtered_by_max_inter_compliment
     # logging.info(f" Processing primer {index + 1}/{len(all_primers)} ({percent}% of the primers), valid primers: {len(primer_set)}")
     logging.info(f" Processing primer {index + 1}  Valid primers: {len(primer_set)}")
     if index % 80000 == 0 and index != 0:
+        logging.info(f" {histogram} primers disqualify by level")
         logging.info(f" tree status: {leaves} leaves and {nodes} nodes")
         logging.info(f" filtered by max inter comp: {count_primers_filtered_by_max_inter_compliment} primers ")
         logging.info(f" filtered by hamming distance: {count_primers_disqualify_by_hamming_distance} primers ")
@@ -204,15 +210,15 @@ def check_if_contains_fixed_length_complement_patterns_in_primers_set(primer,
         rev_complement_pattern = rev_complement_primer[i:i + inter_comp_len + 1]
         if rev_complement_pattern in patterns_of_all_primers_in_set:
             return False
-    return True  # later add all parts of the primer to the set if the primer is valid
+    return True  # later add all parts of primer to the set if valid
 
 
 def check_melting_temp(primer, min_tm=55, max_tm=60):
     """Check for melting temperature of the primer"""
     tm_pass = calc_tm(primer)
     if tm_pass < min_tm or tm_pass > max_tm:
-        return False
-    return True
+        return True
+    return False
 
 
 def update_complement_set(primer, patterns_complement_of_max_inter_comp_len_set):
@@ -242,11 +248,11 @@ def hairpin_homo_dimer_check(primer, model):
     results = nupack.mfe([primer], model=model)
     if results:
         energy = results[0].energy
-        if energy < -2:
+        if energy < -6:
+            print("(-v-)")
             return False
         return True
     return False
-
 def process_file( priemrs, primer_set, patterns_complement_of_max_inter_comp_len_set, trie,
                  count_primers_disqualify_by_inter_compliment, count_primers_disqualify_by_tm,
                  count_primers_disqualify_by_secondary_structure,
@@ -260,37 +266,46 @@ def process_file( priemrs, primer_set, patterns_complement_of_max_inter_comp_len
     time_inter_compliment = 0
     time_melting_temp = 0
     time_secondary_structure = 0
-    model = nupack.Model(material='dna', celsius=37, sodium=0.05, magnesium=0.0015)
-    logging.info(f"{total_primers} primers to check")
-
+    model = nupack_model
     for index, primer in tqdm.tqdm(enumerate(priemrs), total=total_primers, desc=f"Processing Primers"):
         if index % 20000 == 0:
-            print_logs(index, count_primers_disqualify_by_inter_compliment,
-                       primer_set, trie, count_primers_disqualify_by_tm,
-                       count_primers_disqualify_by_secondary_structure,
-                       count_primers_disqualify_by_hamming_distance)
-            #print(f"valid primers: {len(primer_set)}")
+            # print_logs(index, count_primers_disqualify_by_inter_compliment,
+            #            histogram, primer_set, trie, count_primers_disqualify_by_tm,
+            #            count_primers_disqualify_by_secondary_structure,
+            #            count_primers_disqualify_by_hamming_distance)
+            print(f"valid primers: {len(primer_set)}")
         primer = primer.strip()
 
         # Measure time
-
+        start_inter = time.time()
         if check_if_contains_fixed_length_complement_patterns_in_primers_set(primer,
                                                                              patterns_complement_of_max_inter_comp_len_set):
-            if trie.is_valid_primer_no_info(primer, min_ham_distance):
+            time_inter_compliment += time.time() - start_inter
+            start_ham = time.time()
+            if trie.is_valid_primer_no_info(primer, MIN_HAM):
+                time_hamming_distance += time.time() - start_ham
+                start_tm = time.time()
                 if check_melting_temp(primer):
+                    time_melting_temp += time.time() - start_tm
+                    start_secondary = time.time()
                     if hairpin_homo_dimer_check(primer, model):
+                        time_secondary_structure = time.time() - start_secondary
                         trie.insert(primer)
                         update_complement_set(primer, patterns_complement_of_max_inter_comp_len_set)
                         primer_set.add(primer)
                     else:
                         count_primers_disqualify_by_secondary_structure += 1
+                        time_secondary_structure += time.time() - start_secondary
                 else:
                     count_primers_disqualify_by_tm += 1
+                    time_melting_temp += time.time() - start_tm
             else:
                 count_primers_disqualify_by_hamming_distance += 1
+                time_hamming_distance += time.time() - start_ham
 
         else:
             count_primers_disqualify_by_inter_compliment += 1
+            time_inter_compliment += time.time() - start_inter
 
 
     logging.info(f"Total time for Hamming distance check: {time_hamming_distance:.2f} seconds")
@@ -299,14 +314,12 @@ def process_file( priemrs, primer_set, patterns_complement_of_max_inter_comp_len
     logging.info(f"Total time for secondary structure check: {time_secondary_structure:.2f} seconds")
     logging.info(f"Number of primers filtered by max inter comp: {count_primers_disqualify_by_inter_compliment}")
     logging.info(f"Number of primers disqualify by tm: {count_primers_disqualify_by_tm}")
-    logging.info(f"Number of primers disqualify by secondary structure: {count_primers_disqualify_by_secondary_structure}")
+    logging.info(
+        f"Number of primers disqualify by secondary structure: {count_primers_disqualify_by_secondary_structure}")
     logging.info(f"Number of primers disqualify by hamming distance: {count_primers_disqualify_by_hamming_distance}")
 
 
-    #show paper relation
-    valid_primers_without_tm_and_ss = len(primer_set)+count_primers_disqualify_by_tm+count_primers_disqualify_by_secondary_structure
-    logging.info(f"box 1: {valid_primers_without_tm_and_ss}")
-    logging.info(f"box 2: {len(primer_set)}")
+
 
 
 def run2(primers):
@@ -324,20 +337,13 @@ def run2(primers):
                  count_primers_disqualify_by_secondary_structure, count_primers_disqualify_by_hamming_distance)
 
     logging.info(f"Total valid primers: {len(primer_set)}")
-    with open('final_20_length25.txt', 'w') as f:
+    with open('final_20_length.txt', 'w') as f:
         for primer in primer_set:
             f.write(f"{primer}\n")
 
     logging.info("Primer processing completed")
 
-
-def load_primers():
-    with open('output_20_sorted2_100000000.txt', 'r') as f:
-        primers = f.readlines()
-    return primers
-
-
 if __name__ == "__main__":
-    primers = load_primers()
-    run2(primers)
+    primers = run()
+    save_primers(primers)
 

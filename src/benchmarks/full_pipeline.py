@@ -1,5 +1,4 @@
 import logging
-import os
 import random
 import datetime
 import time
@@ -9,7 +8,7 @@ from Bio.Seq import Seq
 from nupack import mfe
 import nupack
 from primer3 import calc_tm
-import primers_trie_tree as trie_utils
+from src.benchmarks.utils import primers_trie_tree as trie_utils
 
 # Configuration and Constants
 MAX_HP = 2

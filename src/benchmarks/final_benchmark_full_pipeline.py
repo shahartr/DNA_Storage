@@ -1,15 +1,13 @@
 import logging
-import os
 import random
 import datetime
 import time
 
 import tqdm
 from Bio.Seq import Seq
-from nupack import mfe
 import nupack
 from primer3 import calc_tm
-from utils import primers_trie_tree as trie_utils
+from src.benchmarks.utils import primers_trie_tree as trie_utils
 
 # Configuration and Constants
 MAX_HP = 2
@@ -44,7 +42,7 @@ def cg_percent(strand):
 
 
 def max_homo_polymer(strand):
-    """ determine the maximum homo-polymers in a strand"""
+    """ Determine the maximum homo-polymers in a strand"""
     if not strand:
         return 0
     current_base = strand[0]
@@ -67,7 +65,7 @@ def reverse_complement_strand(strand):
 
 
 def contains_self_complement(strand, max_self_comp=MAX_SELF_COMP, primer_length=PRIMER_BPS):
-    """ determine if a strand of DNA contains a self-complement
+    """ Determine if a strand of DNA contains a self-complement
      -return true if there is a longer than 4-base pair complement between the two strands"""
     strand_comp = str(Seq(strand).reverse_complement())
     for i in range(primer_length - max_self_comp):  # 16 times patterns of 5 bp
@@ -82,14 +80,14 @@ def get_next_random_primer(length=PRIMER_BPS):
 
 
 def save_primers(primer_library):
-    # save primer into 4 files each file contains 1/4 of the primers
+    # Save primer into 4 files each file contains 1/4 of the primers
     with open(f'output_{PRIMER_BPS}_sorted_{NUM_PRIMERS}.txt', 'w') as f:
         for item in primer_library:
             f.write("%s\n" % item)
 
 
 def sort_primers(primers_library):
-    # sort DNA (A, C, G, T) in lexicographical order
+    # Sort DNA (A, C, G, T) in lexicographical order
     primers_library.sort()
 
 def print_logs2(i, length, start, time_list, count_primers_list, primers_library):
@@ -106,7 +104,6 @@ def print_logs2(i, length, start, time_list, count_primers_list, primers_library
         time_diff = time_diff / i
         time_diff = time_diff * (length - i)
         time_diff = datetime.timedelta(seconds=time_diff)
-        minutes = time_diff.seconds // 60
         logging.info(f"Approx {time_diff.seconds} seconds left")
 
 def run():
@@ -123,16 +120,12 @@ def run():
     max_hp = MAX_HP
     max_self_comp = MAX_SELF_COMP
     primers_library = []
-    count_primers_list = []
-    time_list = []
     time_gc_content = 0
     time_homopolymer = 0
     time_self_complement = 0
     primer_len = PRIMER_BPS
 
     for i in tqdm.tqdm(range(length)):
-        # if (i % 500000) == 0:
-        #     print_logs2(i, length, start, time_list, count_primers_list, primers_library)
         primer = get_next_random_primer(primer_len)
         # Measure time for GC Content
         start_gc = time.time()
@@ -166,12 +159,10 @@ def run():
 
     logging.info(f"Number of primers disqualified by GC content: {count_gc_disqualified}")
     logging.info(f"Number of primers disqualified by homo-polymers: {count_hp_disqualified}")
-    # logging.info(f"Number of primers disqualified by GC clamps: {count_gc_clamp_disqualified}")
     logging.info(f"Number of primers disqualified by self-complementarity: {count_self_comp_disqualified}")
     logging.info(f"Number of primers passed first phase: {len(primers_library)}")
     print("sorting primers...")
     sort_primers(primers_library)
-    # save_primers(list(primers_library))
     return primers_library
 
 
@@ -182,8 +173,6 @@ def print_logs(index, count_primers_filtered_by_max_inter_compliment
                count_primers_disqualify_by_hamming_distance):
     leaves = trie.count_leaves()
     nodes = trie.count_tree_nodes()
-    # percent = "{:.2f}%".format(((index + 1) / len(all_primers)) * 100)
-    # logging.info(f" Processing primer {index + 1}/{len(all_primers)} ({percent}% of the primers), valid primers: {len(primer_set)}")
     logging.info(f" Processing primer {index + 1}  Valid primers: {len(primer_set)}")
     if index % 80000 == 0 and index != 0:
         logging.info(f" tree status: {leaves} leaves and {nodes} nodes")
@@ -269,7 +258,6 @@ def process_file( priemrs, primer_set, patterns_complement_of_max_inter_comp_len
                        primer_set, trie, count_primers_disqualify_by_tm,
                        count_primers_disqualify_by_secondary_structure,
                        count_primers_disqualify_by_hamming_distance)
-            #print(f"valid primers: {len(primer_set)}")
         primer = primer.strip()
 
         # Measure time
@@ -324,7 +312,7 @@ def run2(primers):
                  count_primers_disqualify_by_secondary_structure, count_primers_disqualify_by_hamming_distance)
 
     logging.info(f"Total valid primers: {len(primer_set)}")
-    with open('final_20_length25.txt', 'w') as f:
+    with open('final_20_length.txt', 'w') as f:
         for primer in primer_set:
             f.write(f"{primer}\n")
 
@@ -332,7 +320,7 @@ def run2(primers):
 
 
 def load_primers():
-    with open('output_20_sorted_1000000.txt', 'r') as f:
+    with open('output_20_sorted.txt', 'r') as f:
         primers = f.readlines()
     return primers
 
